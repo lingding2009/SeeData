@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notice manage table</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/xadmin.css">
+    <script src="../../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../static/js/xadmin.js"></script>
+    <script type="text/javascript" src="../../static/js/notice.js"></script>
+    <!-- Make IE8/9 compatible with grids by supporting media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">Home page</a>
+        <a href="">System manage</a>
+        <a>
+          <cite>Notice manage</cite></a>
+      </span>
+    <a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="refresh">
+        <i class="layui-icon" style="line-height:38px">ဂ</i></a>
+</div>
+<div class="x-body">
+    <div class="layui-row">
+        <form class="layui-form layui-col-md12 x-so">
+            <input class="layui-input" placeholder="Notice title" name="title_s" id="name_s" type="text">
+            <input class="layui-input" placeholder="Notice content" name="content_s" id="content_s" type="text">
+            <input class="layui-input" placeholder="Notice author" name="user_name_s" id="user_name_s" type="text">
+            <span class="layui-btn" onclick="get_search()"><i class="layui-icon">&#xe615;</i></span>
+        </form>
+    </div>
+    <xblock>
+        <button class="layui-btn" onclick="notice_add()"><i class="layui-icon"></i>New</button>
+    </xblock>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Time</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="notice_data">
+
+        </tbody>
+    </table>
+    <div class="page">
+        <div id="page_list">
+
+        </div>
+    </div>
+
+</div>
+</body>
+<style>
+    .layui-form-label {
+        width: 150px !important;
+    }
+</style>
+<div class="x-body" id="notice-form" style="display: none">
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <label for="title" class="layui-form-label">
+                <span class="x-red">*</span>Title
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="title" name="title" required lay-verify="required"
+                       autocomplete="off" class="layui-input">
+                <input type="hidden" disabled id="id" name="id">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="user_name" class="layui-form-label">
+                <span class="x-red">*</span>Author
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="user_name" name="user_name" required lay-verify="required"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="content" class="layui-form-label">
+                <span class="x-red">*</span>Content
+            </label>
+            <div class="layui-input-inline">
+               <textarea id="content" name="content" lay-verify="required" placeholder="Please enter notice content"
+                         class="layui-textarea" cols="30" rows="12"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button id="L_repass" class="layui-btn" lay-filter="edit" lay-submit="">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+</html>
