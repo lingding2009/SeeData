@@ -31,3 +31,8 @@ Open Terminal, then enter the command:
 
 **pip install xlrd**
 
+
+## 页面
+![3 3](https://github.com/lingding2009/SeeData/assets/125749306/6b2c6a48-2dfc-46e0-96ba-0838477fa97a)
+
+
