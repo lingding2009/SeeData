@@ -1,4 +1,5 @@
-# SeeData platform
+
+# SeeData platform by Ding Li
 This system is based on Python Web technology, Flask as the development of the WEB framework, MySQL as the database, to start the public security data visualization of the detailed analysis and research
 
 ## Development environment
